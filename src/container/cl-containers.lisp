@@ -109,12 +109,20 @@
 (defmethod first ((list list))
   (cl:first list))
 
+(defmethod (setf first) (value (list list))
+  (setf (cl:first list) value))
+
 (defmethod first ((vec vector))
   (aref vec 0))
+
+(defmethod (setf first) (value (vec vector))
+  (setf (aref vec 0) value))
 
 (defmethod first ((array array))
   (row-major-aref array 0))
 
+(defmethod (setf first) (value (array array))
+  (setf (row-major-aref array 0) value))
 
 ;;;; Last
 

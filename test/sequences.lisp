@@ -369,6 +369,21 @@
     (1 (first #2A((1 2) (3 4))))
     ('x (first (list-wrap 'x 'y 'z)))))
 
+(test setf-first
+      "Test generic (SETF FIRST) function"
+
+  (alet (list 1 2 3 4)
+    (is (= 'x (setf (first it) 'x)))
+    (is (= '(x 2 3 4) it)))
+
+  (alet (vector 1 2 3 4)
+    (is (= 'x (setf (first it) 'x)))
+    (is (= #(x 2 3 4) it)))
+
+  (alet (make-array '(2 2) :initial-contents '((1 2) (3 4)))
+    (is (= 'a (setf (first it) 'a)))
+    (is (= #2A((a 2) (3 4)) it))))
+
 (test last
   "Test generic LAST function"
 

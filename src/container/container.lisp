@@ -39,6 +39,10 @@
   (:documentation
    "Returns the first element of SEQUENCE."))
 
+(defgeneric (setf first) (sequence)
+  (:documentation
+   "Sets the first element of SEQUENCE."))
+
 (defgeneric last (sequence &optional n)
   (:documentation
    "Returns the N'th (default 0) element from the last element of
