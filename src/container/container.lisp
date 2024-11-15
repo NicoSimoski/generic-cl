@@ -39,7 +39,7 @@
   (:documentation
    "Returns the first element of SEQUENCE."))
 
-(defgeneric (setf first) (sequence)
+(defgeneric (setf first) (value sequence)
   (:documentation
    "Sets the first element of SEQUENCE."))
 
